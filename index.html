@@ -124,7 +124,6 @@
                 <input type="email" id="cemail" name="cemail" required>
                 <div class="error-message" id="cemailError"></div>
             </div>
-<!--
             <hr>
             <h4>Данные участников</h4>
             <div class="form-group">
@@ -167,7 +166,6 @@
                 <input type="email" id="uch2email" name="uch2email" required>
                 <div class="error-message" id="uch2emailError"></div>
             </div>
--->
             <button type="submit">Зарегистрироваться</button>
         </form>
     </div>
@@ -213,9 +211,6 @@
     };
 
     // Проверка значений полей
-    validateField('comandName', 'comandNameError', isNotEmpty);
-    validateField('schoolName', 'schoolNameError', isNotEmpty);
-    validateField('cityName', 'cityNameError', isNotEmpty);
     validateField('mName', 'mNameError', isNotEmpty);
     validateField('mpName', 'mpNameError', isNotEmpty);
     validateField('mphoneNumber', 'mphoneNumberError', isPhoneValid);
