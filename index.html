@@ -1,0 +1,245 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Registration Form</title> 
+    <style> 
+        body { 
+            font-family: CeraPro, Helvetica, Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        } 
+        .registration-form { 
+            background-color: #ffffff; 
+            padding: 20px 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            width: 100%; 
+            max-width: 400px;
+            margin-top: 1200px;
+        } 
+        .form-group { 
+            margin-bottom: 15px; 
+        } 
+        .form-group label { 
+            display: block; 
+            margin-bottom: 5px; 
+        } 
+        .form-group input { 
+            width: 100%; 
+            padding: 8px; 
+            box-sizing: border-box; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        } 
+        .form-group input:focus { 
+            border-color: #007bff; 
+        } 
+        .error-message { 
+            color: red; 
+            font-size: 0.875em; 
+            margin-top: 5px; 
+        } 
+        button { 
+            width: 100%; 
+            padding: 10px; 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+        } 
+        button:hover { 
+            background-color: #0056b3; 
+        } 
+    </style> 
+</head> 
+<body>
+<div class="registration-form">
+        <h2>Форма регистрации</h2>
+        <form id="registrationForm">
+        <h4>Общая информация</h4>
+            <div class="form-group">
+                <label for="comandName">Название команды</label>
+                <input type="text" id="comandName" name="comandName" required>
+                <div class="error-message" id="comandNameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="schoolName">Полное наименование учебного заведения</label>
+                <input type="text" id="schoolName" name="schoolName" required>
+                <div class="error-message" id="schoolNameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="cityName">Населенный пункт</label>
+                <input type="text" id="cityName" name="cityName" required>
+                <div class="error-message" id="cityNameError"></div>
+            </div>
+            <hr>
+            <h4>Данные наставника</h4>
+            <div class="form-group">
+                <label for="mName">ФИО наставника</label>
+                <input type="text" id="mName" name="mName" required>
+                <div class="error-message" id="mNameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="mpName">Должность наставника</label>
+                <input type="text" id="mpName" name="mpName" required>
+                <div class="error-message" id="mpNameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="mphoneNumber">Номер телефона наставника</label>
+                <input type="tel" id="mphoneNumber" name="mphoneNumber" placeholder="+375XXXXXXXXX" required>
+                <div class="error-message" id="mphoneNumberError"></div>
+            </div>
+            <div class="form-group">
+                <label for="memail">Электронная почта наставника</label>
+                <input type="email" id="memail" name="memail" required>
+                <div class="error-message" id="memailError"></div>
+            </div>
+            <hr>
+            <h4>Данные капитана</h4>
+            <div class="form-group">
+                <label for="captainName">ФИО капитана</label>
+                <input type="text" id="captainName" name="captainName" required>
+                <div class="error-message" id="captainNameError"></div>
+            </div>
+            <div class="form-group">
+                <label for="captainClass">Класс капитана</label>
+                <input type="number" id="captainClass" name="captainClass" required>
+                <div class="error-message" id="captainClassError"></div>
+            </div>
+            <div class="form-group">
+                <label for="cphoneNumber">Номер телефона капитана</label>
+                <input type="tel" id="cphoneNumber" name="cphoneNumber" placeholder="+375XXXXXXXXX" required>
+                <div class="error-message" id="cphoneNumberError"></div>
+            </div>
+            <div class="form-group">
+                <label for="cemail">Электронная почта капитана</label>
+                <input type="email" id="cemail" name="cemail" required>
+                <div class="error-message" id="cemailError"></div>
+            </div>
+<!--
+            <hr>
+            <h4>Данные участников</h4>
+            <div class="form-group">
+                <label for="uchName1">ФИО участника 1</label>
+                <input type="text" id="uchName1" name="uchName1" required>
+                <div class="error-message" id="uchName1Error"></div>
+            </div>
+            <div class="form-group">
+                <label for="uch1Class">Класс</label>
+                <input type="number" id="uch1Class" name="uch1Class" required>
+                <div class="error-message" id="uch1ClassError"></div>
+            </div>
+            <div class="form-group">
+                <label for="uch1phoneNumber">Номер телефона</label>
+                <input type="tel" id="uch1phoneNumber" name="uch1phoneNumber" placeholder="+375XXXXXXXXX" required>
+                <div class="error-message" id="uch1phoneNumberError"></div>
+            </div>
+            <div class="form-group">
+                <label for="uch1email">Электронная почта</label>
+                <input type="email" id="uch1email" name="uch1email" required>
+                <div class="error-message" id="uch1emailError"></div>
+            </div>
+            <div class="form-group">
+                <label for="uchName2">ФИО участника 2</label>
+                <input type="text" id="uchName2" name="uchName2" required>
+                <div class="error-message" id="uchName2Error"></div>
+            </div>
+            <div class="form-group">
+                <label for="uch2Class">Класс</label>
+                <input type="number" id="uch2Class" name="uch2Class" required>
+                <div class="error-message" id="uch2ClassError"></div>
+            </div>
+            <div class="form-group">
+                <label for="uch2phoneNumber">Номер телефона</label>
+                <input type="tel" id="uch2phoneNumber" name="uch2phoneNumber" placeholder="+375XXXXXXXXX" required>
+                <div class="error-message" id="uch2phoneNumberError"></div>
+            </div>
+            <div class="form-group">
+                <label for="uch2email">Электронная почта</label>
+                <input type="email" id="uch2email" name="uch2email" required>
+                <div class="error-message" id="uch2emailError"></div>
+            </div>
+-->
+            <button type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Очистка предыдущих сообщений об ошибках
+    const errorMessages = document.querySelectorAll('.error-message');
+    errorMessages.forEach(error => error.textContent = '');
+
+    let valid = true;
+
+    // Универсальная функция валидации полей
+    function validateField(id, errorId, validationFn) {
+        const value = document.getElementById(id).value.trim();
+        const errorMessage = validationFn(value);
+        if (errorMessage) {
+            document.getElementById(errorId).textContent = errorMessage;
+            valid = false;
+        }
+    }
+
+    // Функции валидации
+    const isNotEmpty = value => {
+        if (value.length < 2) {
+            return 'Поле должно содержать минимум 2 символа.';
+        }
+        if (!/\w+\s+\w+/.test(value)) {
+            return 'Поле должно содержать минимум два слова.';
+        }
+        return '';
+    };
+
+    const isPhoneValid = value => !/^\+375\d{9}$/.test(value) ? 'Введите номер в формате +375XXXXXXXXX.' : '';
+    const isEmailValid = value => !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? 'Введите корректный адрес электронной почты.' : '';
+    const isClassValid = value => {
+        const number = parseInt(value, 10);
+        if (isNaN(number) || number < 1 || number > 11) {
+            return 'Значение должно быть числом от 1 до 11.';
+        }
+        return '';
+    };
+
+    // Проверка значений полей
+    validateField('comandName', 'comandNameError', isNotEmpty);
+    validateField('schoolName', 'schoolNameError', isNotEmpty);
+    validateField('cityName', 'cityNameError', isNotEmpty);
+    validateField('mName', 'mNameError', isNotEmpty);
+    validateField('mpName', 'mpNameError', isNotEmpty);
+    validateField('mphoneNumber', 'mphoneNumberError', isPhoneValid);
+    validateField('memail', 'memailError', isEmailValid);
+    validateField('captainName', 'captainNameError', isNotEmpty);
+    validateField('captainClass', 'captainClassError', isClassValid); // Проверка класса капитана
+    validateField('cphoneNumber', 'cphoneNumberError', isPhoneValid);
+    validateField('cemail', 'cemailError', isEmailValid);
+    validateField('uchName1', 'uchName1Error', isNotEmpty);
+    validateField('uch1Class', 'uch1ClassError', isClassValid); // Проверка класса участника 1
+    validateField('uch1phoneNumber', 'uch1phoneNumberError', isPhoneValid);
+    validateField('uch1email', 'uch1emailError', isEmailValid);
+    validateField('uchName2', 'uchName2Error', isNotEmpty);
+    validateField('uch2Class', 'uch2ClassError', isClassValid); // Проверка класса участника 2
+    validateField('uch2phoneNumber', 'uch2phoneNumberError', isPhoneValid);
+    validateField('uch2email', 'uch2emailError', isEmailValid);
+
+    // Если все проверки пройдены
+    if (valid) {
+        alert('Регистрация прошла успешно!');
+        // Здесь можно отправить данные на сервер
+    }
+});
+
+    </script> 
+</body> 
+</html>
