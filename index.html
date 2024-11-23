@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Registration Form</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f4f4f4; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+        } 
+        .registration-form { 
+            background-color: #ffffff; 
+            padding: 20px 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            width: 100%; 
+            max-width: 400px; 
+        } 
+        .form-group { 
+            margin-bottom: 15px; 
+        } 
+        .form-group label { 
+            display: block; 
+            margin-bottom: 5px; 
+        } 
+        .form-group input { 
+            width: 100%; 
+            padding: 8px; 
+            box-sizing: border-box; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+        } 
+        .form-group input:focus { 
+            border-color: #007bff; 
+        } 
+        .error-message { 
+            color: red; 
+            font-size: 0.875em; 
+            margin-top: 5px; 
+        } 
+        button { 
+            width: 100%; 
+            padding: 10px; 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            border-radius: 4px; 
+            cursor: pointer; 
+        } 
+        button:hover { 
+            background-color: #0056b3; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <div class="registration-form"> 
+        <h2>Форма регистрации</h2> 
+        <form id="registrationForm"> 
+            <div class="form-group"> 
+                <label for="firstName">Имя</label> 
+                <input type="text" id="firstName" name="firstName" required> 
+                <div class="error-message" id="firstNameError"></div> 
+            </div> 
+            <div class="form-group"> 
+                <label for="lastName">Фамилия</label> 
+                <input type="text" id="lastName" name="lastName" required> 
+                <div class="error-message" id="lastNameError"></div> 
+            </div> 
+            <div class="form-group"> 
+                <label for="phoneNumber">Номер телефона</label> 
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="+375XXXXXXXXX" required> 
+                <div class="error-message" id="phoneNumberError"></div> 
+            </div> 
+            <div class="form-group"> 
+                <label for="email">Электронная почта</label> 
+                <input type="email" id="email" name="email" required> 
+                <div class="error-message" id="emailError"></div> 
+            </div> 
+            <button type="submit">Зарегистрироваться</button> 
+        </form> 
+    </div> 
+ 
+    <script> 
+        document.getElementById('registrationForm').addEventListener('submit', function(event) { 
+            event.preventDefault(); 
+ 
+            // Очистка предыдущих сообщений об ошибках 
+            document.getElementById('firstNameError').textContent = ''; 
+            document.getElementById('lastNameError').textContent = ''; 
+            document.getElementById('phoneNumberError').textContent = ''; 
+            document.getElementById('emailError').textContent = ''; 
+ 
+            let valid = true; 
+ 
+            // Проверка имени 
+            const firstName = document.getElementById('firstName').value.trim(); 
+            if (firstName.length < 2) { 
+                document.getElementById('firstNameError').textContent = 'Имя должно содержать минимум 2 символа.'; 
+                valid = false; 
+            } 
+ 
+            // Проверка фамилии 
+            const lastName = document.getElementById('lastName').value.trim(); 
+            if (lastName.length < 2) { 
+                document.getElementById('lastNameError').textContent = 'Фамилия должна содержать минимум 2 символа.'; 
+                valid = false;
+                } 
+ 
+            // Проверка номера телефона 
+            const phoneNumber = document.getElementById('phoneNumber').value.trim(); 
+            const phonePattern = /^\+375\d{9}$/; 
+            if (!phonePattern.test(phoneNumber)) { 
+                document.getElementById('phoneNumberError').textContent = 'Введите номер в формате +375XXXXXXXXX.'; 
+                valid = false; 
+            } 
+ 
+            // Проверка email 
+            const email = document.getElementById('email').value.trim(); 
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+            if (!emailPattern.test(email)) { 
+                document.getElementById('emailError').textContent = 'Введите корректный адрес электронной почты.'; 
+                valid = false; 
+            } 
+ 
+            if (valid) { 
+                alert('Регистрация прошла успешно!'); 
+                // Здесь можно отправить данные на сервер 
+            } 
+        }); 
+    </script> 
+</body> 
+</html>
