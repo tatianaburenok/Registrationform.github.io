@@ -3,7 +3,7 @@
 <head> 
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"> 
     <title>Registration Form</title> 
     <style> 
         body { 
@@ -11,10 +11,11 @@
             background-color: #f4f4f4; 
             display: flex; 
             justify-content: center; 
-            align-items: center; 
+            align-items: flex-start; /* Ставим flex-start, чтобы форма начиналась с самого верха */
             height: 100vh; 
             margin: 0; 
-        } 
+            padding-top: 20px; /* Добавим небольшой отступ сверху */
+} 
         .registration-form { 
             background-color: #ffffff; 
             padding: 20px 30px; 
@@ -22,7 +23,8 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
             width: 100%; 
             max-width: 400px;
-            margin-top: 1200px;
+            margin-top: 0; /* Убираем избыточный отступ сверху */
+}
         } 
         .form-group { 
             margin-bottom: 15px; 
@@ -172,7 +174,10 @@
     <script>
         document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault();
-
+            window.onload = function() {
+                window.scrollTo(0, 0); // Прокрутка в начало страницы
+            };
+            
     // Очистка предыдущих сообщений об ошибках
     const errorMessages = document.querySelectorAll('.error-message');
     errorMessages.forEach(error => error.textContent = '');
