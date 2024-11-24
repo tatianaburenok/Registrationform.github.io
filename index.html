@@ -17,15 +17,15 @@
 } 
         .registration-form { 
             background-color: #ffffff; 
-            padding: 20px 30px; 
-            border-radius: 8px; 
+            padding: 0px 30px 20px;
+            /* border-radius: 8px; */ 
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
             width: 100%; 
             max-width: 400px;
 }
         } 
         .form-group { 
-            margin-bottom: 15px; 
+            margin-bottom: 10px; 
         } 
         .form-group label { 
             display: block; 
@@ -36,7 +36,8 @@
             padding: 8px; 
             box-sizing: border-box; 
             border: 1px solid #ccc; 
-            border-radius: 4px; 
+            border-radius: 4px;
+            margin-bottom: 10px; 
         } 
         .form-group input:focus { 
             border-color: #007bff; 
@@ -172,7 +173,6 @@
     <script>
         document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault();
-
             
     // Очистка предыдущих сообщений об ошибках
     const errorMessages = document.querySelectorAll('.error-message');
