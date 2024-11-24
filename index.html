@@ -23,7 +23,6 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
             width: 100%; 
             max-width: 400px;
-            margin-top: 0; /* Убираем избыточный отступ сверху */
 }
         } 
         .form-group { 
@@ -174,9 +173,7 @@
     <script>
         document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault();
-            window.onload = function() {
-                window.scrollTo(0, 0); // Прокрутка в начало страницы
-            };
+
             
     // Очистка предыдущих сообщений об ошибках
     const errorMessages = document.querySelectorAll('.error-message');
