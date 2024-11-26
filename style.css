@@ -1,47 +1,52 @@
-body { 
-    font-family: 'Inter'; 
-    background-color: #f4f4f4; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; /* Измените на center, чтобы центрировать форму по вертикали */
-    height: 100vh; 
-    margin: 0; 
-} 
+body {
+    font-family: 'Inter';
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden; /* Убирает скроллинг */
+}
 
-.registration-form { 
-    background-color: #E3E1EA; 
-    padding: 30px; /* Установите отступы для удобства */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-    width: 1080px; /* Убедитесь, что у вас указано 'px' */
-    height: 1920px; /* Убедитесь, что у вас указано 'px' */
-    display: flex; /* Используйте flexbox для центрирования содержимого */
-    flex-direction: column; /* Горизонтальное направление */
+.registration-form {
+    background-color: #E3E1EA;
+    width: 1080px; /* Фиксированная ширина */
+    height: 1920px; /* Фиксированная высота */
+    display: flex;
+    flex-direction: column;
     justify-content: center; /* Центрация содержимого по вертикали */
     align-items: center; /* Центрация содержимого по горизонтали */
-}         
+    padding: 30px; /* Внутренние отступы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
 
-.form-group { 
-    margin-bottom: 10px; 
-    width: 100%; /* Убедитесь, что элементы формы занимают всю ширину */
-} 
+.form-group {
+    margin-bottom: 20px; /* Пространство между полями */
+    width: 100%; /* Поля формы растягиваются на всю ширину */
+    max-width: 600px; /* Ограничение максимальной ширины */
+}
 
-.form-group label { 
-    display: block; 
-    margin-bottom: 5px; 
-} 
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
 
-.form-group input { 
-    width: 100%; 
-    padding: 8px; 
-    box-sizing: border-box; 
-    border: 1px solid #7D7A85; 
-    border-radius: 3px;
-    margin-bottom: 10px; 
-} 
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #7D7A85;
+    border-radius: 4px;
+    font-size: 16px;
+}
 
 .form-group input:focus { 
     border-color: #007bff; 
 } 
+
 
 .error-message { 
     color: red; 
@@ -49,24 +54,27 @@ body {
     margin-top: 5px; 
 } 
 
-button { 
-    width: 100%; 
-    padding: 10px; 
-    background-color: #4c00ce; 
-    color: white; 
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-} 
+button {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    background-color: #4c00ce;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
-button:hover { 
-    background-color: #3b00a0; 
-} 
+button:hover {
+    background-color: #3b00a0;
+}
 
 h2 {
-    color: #F9F6FF;
-    font-weight: bold;
-    font-size: 36px; /* Убедитесь, что указан размер в 'px' */
+    color: #4c00ce;
+    font-size: 36px;
     text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
 }
 
